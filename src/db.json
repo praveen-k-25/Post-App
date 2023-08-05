@@ -1,0 +1,21 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "My first Post",
+      "time": "July 01,2021 11:17:36 AM",
+      "body": "Made a video about tesla Q1 model results"
+    },
+    {
+      "id": 2,
+      "title": "My Second Post",
+      "time": "July 02,2021 11:17:36 AM",
+      "body": "hi hello welcome"
+    },{
+      "id": 3,
+      "title": "Interstellar",
+      "time": "July 03,2021 01:17:36 AM",
+      "body": "It's a nice movie to watch"
+    }
+  ]
+}

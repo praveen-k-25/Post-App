@@ -1,0 +1,223 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  background-color: white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+*{
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 16px;
+}
+#root{
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.App{
+  height: 100vh;
+  max-width: 1100px;
+  width: 100%;
+  box-shadow: 0 0 15px gray;
+}
+.header,.footer{
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.3rem;
+  background-color: rgb(31, 141, 192);
+}
+.footer{
+  font-weight: 500;
+}
+div{
+  text-align: center;
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0.7rem;
+  justify-content: space-between;
+  background-color: #333;
+}
+.searchForm{
+  width: 58%;
+}
+#search{
+  width: 100%;
+  min-height: 48px;
+  font-size: 20px;
+  padding: 0.5rem 1rem;
+  border: 2px solid #333;
+  border-radius: 35px;
+}
+
+.searchForm label{
+  position: absolute;
+  left: -9999px;
+}
+ul{
+  width: 38%;
+  display: flex;
+  justify-content: space-around;
+}
+li a{
+  text-decoration: none;
+  color: white;
+  padding: 0.7rem;
+}
+ul li{
+  flex-grow: 1;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+li:hover a,li:active a{
+  background-color: white;
+  color: #333;
+}
+@media Screen and (max-width: 560px){
+  .App{
+    width: 100%;
+  }
+  nav{
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 0;
+  }
+  ul{
+    width :auto;
+  }
+  ul li{
+    justify-content: flex-start;
+  }
+  .searchForm{
+    width: 80%;
+  }
+}
+.post{
+  font-size: 1rem;
+  border-bottom: 1px solid #333 ;
+  text-align: left;
+  margin: 1rem;
+  color: #333;
+}
+.post a{
+  color: inherit;
+  text-decoration: none;
+}
+.post div{
+  text-align: left;
+}
+.post:first-child{
+  margin-top: 0;
+}
+.post:last-child{
+  border-bottom: none;
+}
+.postTime{
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+.postBody{
+  margin: 1rem 0;
+}
+/* Assuming your root 'index.css' or global styles file */
+
+/* Set height of the body and html to 100% to ensure components fill the viewport */
+
+/* Ensure the 'App' component fills the entire viewport height */
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+
+/* Set 'Home', 'PostPage', 'NewPost', 'About', and 'Missing' components to occupy remaining available space */
+main,
+.PostPage,
+.newPost,
+.About,
+.Missing,.editPost {
+  flex: 1 1 auto;
+  min-height: 50px; /* Adjust the minimum height as per your requirement */
+  overflow-y: auto; /* Enable vertical scrolling for these components if their content overflows */
+}
+/* Styling for scroll bar */
+*::-webkit-scrollbar {
+  width: 0em; /* Adjust the width as needed */
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+}
+
+/* form styling in new Post */
+.newPost{
+  text-align: left;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.newPostForm{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.newPostForm input[type="text"]{
+  width: 100%;
+  height: 48px;
+  font-size: inherit;
+  padding: 1rem;
+}
+.newPostForm textarea{
+  flex-grow: 1;
+  font-size: inherit;
+  padding: 1rem;
+}
+
+.newPostForm button{
+  font-size: inherit;
+  font-weight: 550;
+  margin: 1rem 0;
+  height: 48px;
+  border-radius: 10px;
+}
+
+.PostPage .post button{
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.4rem;
+  background-color: red;
+  color: white;
+}
+.PostPage .post button:active,.newPostForm button:active{
+  transform: scale(97%);
+}
+.PostPage .post div{
+  color: #333;
+}
+
+
+
