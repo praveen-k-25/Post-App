@@ -17,7 +17,6 @@ const useWindowSize = ()=>{
         window.addEventListener('resize',handleSize);
         return ()=> window.removeEventListener('resize',handleSize)
     },[])
-    console.log(windowSize.width);
     return windowSize;
 }
 export default useWindowSize

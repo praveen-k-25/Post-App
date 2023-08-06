@@ -1,7 +1,10 @@
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import DataContext from './context/DataContext';
 
-const EditPosts = ({posts,handleEdit,editPostTitle,editPostBody,setEditPostBody,setEditPostTitle}) => {
+const EditPosts = () => {
+
+  const {posts,handleEdit,editPostTitle,editPostBody,setEditPostBody,setEditPostTitle} = useContext(DataContext)
     const {id} = useParams();
     const edit = posts.find(post => (post.id).toString() === id);
     useEffect(()=>{
@@ -10,6 +13,7 @@ const EditPosts = ({posts,handleEdit,editPostTitle,editPostBody,setEditPostBody,
             setEditPostBody(edit.body)
         }
     },[edit,setEditPostBody,setEditPostTitle])
+
   return (
     <div className='editPost newPost'>
         <h2>Edit Post</h2>
@@ -19,6 +23,7 @@ const EditPosts = ({posts,handleEdit,editPostTitle,editPostBody,setEditPostBody,
           id='postTitle'
           type='text'
           required
+          autoFocus
           placeholder='New Post'
           value={editPostTitle}
           onChange={e=>setEditPostTitle(e.target.value)}
