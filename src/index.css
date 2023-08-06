@@ -33,16 +33,21 @@ html{
   width: 100%;
   box-shadow: 0 0 15px gray;
 }
-.header,.footer{
+.hook{
+  font-size: 2rem;
+}
+.header{
   white-space: nowrap;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   padding: 0.3rem;
   background-color: rgb(31, 141, 192);
 }
 .footer{
+  text-align: center;
   font-weight: 500;
+  background-color: rgb(31, 141, 192);
 }
 div{
   text-align: center;

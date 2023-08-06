@@ -12,9 +12,11 @@ import {format} from "date-fns";
 import api from "./api/posts";
 import EditPosts from "./EditPosts";
 import dataBase from "./db.json"
+import React from 'react';
+import useWindowSize from "./hooks/useWindowSize";
 
 function App() {
-  const [posts,setPosts] = useState([] )
+  const [posts,setPosts] = useState([]);
   const [search,setSearch] = useState('');
   const [searchResults,setSearchResults] = useState([]);
   const [postTitle,setPostTitle]= useState('');
@@ -22,10 +24,12 @@ function App() {
   const [editPostTitle,setEditPostTitle] = useState('');
   const [editPostBody,setEditPostBody] = useState('');
   const Navigate = useNavigate();
+  const {width} = useWindowSize();
 
   useEffect(()=>{
     const fetchPost = async ()=>{
       try{
+        /* const response = await axios.get('http://localhost:3500/posts') */
         const response = await api.get('/posts');
         setPosts(await response.data);
       } catch(err){
@@ -86,7 +90,7 @@ function App() {
   
   return (
     <div className="App"> 
-        <Header title="Dhuddu Social Media"/>
+        <Header title="Dhuddu Social Media" width={width}/>
         <Nav
           search = {search}
           setSearch = {setSearch}

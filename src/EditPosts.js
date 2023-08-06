@@ -9,7 +9,7 @@ const EditPosts = ({posts,handleEdit,editPostTitle,editPostBody,setEditPostBody,
             setEditPostTitle(edit.title)
             setEditPostBody(edit.body)
         }
-    },[posts,setEditPostBody,setEditPostTitle])
+    },[edit,setEditPostBody,setEditPostTitle])
   return (
     <div className='editPost newPost'>
         <h2>Edit Post</h2>
